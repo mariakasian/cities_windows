@@ -2,8 +2,6 @@ package citiesgame;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class FinalWindow {
     JFrame frame;
@@ -13,7 +11,7 @@ public class FinalWindow {
     int computerScore;
     FinalWindow() {
 
-        //Создаём компоненты
+        //Створюємо компоненти.
         JLabel whoLoseLabel = new JLabel("" + whoLose);
         JLabel thanksLabel = new JLabel("Дякую за гру! Тепер ви краще знаєте міста України.");
         JLabel winnerLabel = new JLabel("Перемогу отримав: " + winner);
@@ -22,7 +20,7 @@ public class FinalWindow {
         JLabel computerScoreLabel = new JLabel("комп’ютер: " + computerScore + " балів");
         JButton endButton = new JButton("Завершити");
 
-        //Создаём фрейм и задаём размеры и раположение компонентов
+        //Створюємо фрейм и задаємо розміри і положенння компонентів.
         frame = new JFrame("Вітаємо!");
         frame.setSize(516,260);
         whoLoseLabel.setBounds(36, 22, 440, 30);
@@ -56,8 +54,7 @@ public class FinalWindow {
         endButton.setBackground(Color.BLUE);
         endButton.setForeground(Color.YELLOW);
 
-
-        // Зміна розміру шрифта для Label-ів
+        // Зміна розміру шрифта для Label-ів.
         Font font = new Font("Arial", Font.BOLD, 17);
         whoLoseLabel.setFont(font);
         thanksLabel.setFont(font);
@@ -66,12 +63,12 @@ public class FinalWindow {
         userScoreLabel.setFont(font);
         computerScoreLabel.setFont(font);
 
-        // Зміна розміру шрифта для startButton
+        // Зміна розміру шрифта для startButton.
         Font buttonFont = new Font("Arial", Font.BOLD, 18);
         endButton.setFont(buttonFont);
 
         endButton.addActionListener(e -> {
-            frame.dispose(); // Закриття фінального вікна
+            frame.dispose(); // Закриття фінального вікна.
         });
     }
 }

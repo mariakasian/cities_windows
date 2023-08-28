@@ -15,7 +15,7 @@ public class IsCityInList {
             }
         }
         if (!isCorrectCity) {
-            System.out.println("Такого міста не існує в базі даних. Введіть інше місто!");
+            String message = "Такого міста не існує в базі даних. Введіть інше місто!";
         }
         return isCorrectCity;
     }

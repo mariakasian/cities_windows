@@ -8,7 +8,7 @@ public class IsCorrectFirstChar {
         if (Character.toLowerCase(input.charAt(0)) == Character.toLowerCase(lastComputerWordChar)) {
             isValid = true;
         } else {
-            System.out.println("Ви ввели місто з неправильної першої літери.");
+            String message = "Ви ввели місто з неправильної першої літери.";
         }
         return isValid;
     }

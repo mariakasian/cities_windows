@@ -25,7 +25,7 @@ public class GameLoop {
             GameWindow gameWindow = new GameWindow();
             String input = gameWindow.input;
 
-            //isEnd від юзера
+            //isEnd від юзера.
             isEndFromUser(input, userScore, computerScore);
 
             //Перевіряємо, чи місто, що ввів користувач, є в списку міст.
@@ -42,12 +42,12 @@ public class GameLoop {
                 }
             }
 
-            //Перевірка на повтор від юзера
+            //Перевірка на повтор від юзера.
             if (isRepeatedByUser(input, usedCities)) {
                 continue;
             }
 
-            //Ведемо рахунок балів юзера
+            //Ведемо рахунок балів юзера.
             userScore += input.length() * 5;
 
             //Перевірка, якщо місто, яке ввів гравець, закінчується на неіснуючу літеру.
@@ -58,12 +58,12 @@ public class GameLoop {
 
             usedCities.add(lastComputerWord);
 
-            //isEnd від комп'ютера
+            //isEnd від комп'ютера.
             isEndFromComputer(lastComputerWord, userScore, computerScore);
 
             System.out.println("Моє місто: " + lastComputerWord);
 
-            //Ведемо рахунок балів компьютера
+            //Ведемо рахунок балів компьютера.
             computerScore += (lastComputerWord != null ? lastComputerWord.length() * 5 : 0);
 
             //Перевірка, якщо місто, яке ввів комп'ютер, закінчується на неіснуючу літеру.

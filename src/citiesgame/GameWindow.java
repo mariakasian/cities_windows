@@ -11,16 +11,16 @@ public class GameWindow implements ActionListener {
     String lastComputerWord;
     String message;
 
-    //Создаём компоненты
+    //Створюємо компоненти.
     JLabel computerLabel = new JLabel("Комп’ютер:");
     JLabel userLabel = new JLabel("Гравець:");
-    JLabel computerWordLabel = new JLabel("" + lastComputerWord);
+    JLabel computerWordLabel = new JLabel("lastComputerWord");
     JTextField userWordField = new JTextField(15);
     JButton nextButton = new JButton("V");
-    JLabel messageLabel = new JLabel("" + message);
+    JLabel messageLabel = new JLabel("message");
 
     GameWindow() {
-        //Создаём фрейм и задаём размеры и раположение компонентов
+        //Створюємо фрейм и задаємо розміри і положення компонентів.
         frame = new JFrame("Міста!");
         frame.setSize(516, 260);
         computerLabel.setBounds(36, 30, 108, 30);
@@ -42,12 +42,11 @@ public class GameWindow implements ActionListener {
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Змінюємо колір фону вікна на жовтий
+        // Змінюємо колір фону вікна на жовтий.
         frame.setForeground(Color.BLUE);
         frame.getContentPane().setBackground(Color.YELLOW);
 
-        // Зміна розміру та шрифтів
-
+        // Зміна розміру та шрифтів.
         Font font = new Font("Arial", Font.BOLD, 18);
         Font bFont = new Font("Arial", Font.BOLD, 9);
         Font mFont = new Font("Arial", Font.PLAIN, 16);
@@ -58,7 +57,7 @@ public class GameWindow implements ActionListener {
         nextButton.setFont(bFont);
         messageLabel.setFont(mFont);
 
-        // Змінюємо колір тексту для JLabel та JButton
+        // Змінюємо колір тексту для JLabel-ів та JButton.
         computerLabel.setForeground(Color.BLUE);
         userLabel.setForeground(Color.BLUE);
         computerWordLabel.setForeground(Color.BLACK);

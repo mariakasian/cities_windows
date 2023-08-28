@@ -14,7 +14,7 @@ public class GetRandomCity {
             }
         }
 
-        //Перевірка на повтор від комп'ютера
+        //Перевірка на повтор від комп'ютера.
         properCities.removeIf(usedCities::contains);
 
         if (properCities.isEmpty()) {

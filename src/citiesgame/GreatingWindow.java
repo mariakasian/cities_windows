@@ -8,12 +8,12 @@ public class GreatingWindow {
 
     GreatingWindow() {
 
-        //Создаём компоненты
+        //Створюємо компоненти.
         JLabel greatingLabel1 = new JLabel("Вітаємо вас у грі дитинства");
         JLabel greatingLabel2 = new JLabel("і всіх розумників!");
         JButton startButton = new JButton("Старт");
 
-        //Создаём фрейм и задаём размеры и раположение компонентов
+        //Створюємо фрейм і задаємо розміри і положення компонентів.
         frame = new JFrame("Вітаємо!");
         frame.setSize(516, 168);
         greatingLabel1.setBounds(48, 30, 300, 30);
@@ -35,12 +35,12 @@ public class GreatingWindow {
         greatingLabel1.setForeground(Color.BLUE);
         greatingLabel2.setForeground(Color.BLUE);
 
-        // Зміна розміру шрифта для greatingLabel
+        // Зміна розміру шрифта для greatingLabel.
         Font labelFont = new Font("Arial", Font.BOLD, 18);
         greatingLabel1.setFont(labelFont);
         greatingLabel2.setFont(labelFont);
 
-        // Зміна розміру шрифта для startButton
+        // Зміна розміру шрифта для startButton.
         Font buttonFont = new Font("Arial", Font.BOLD, 20);
         startButton.setFont(buttonFont);
 
