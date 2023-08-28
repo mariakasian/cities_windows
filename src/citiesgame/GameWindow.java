@@ -6,20 +6,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GameWindow implements ActionListener {
+
     JFrame frame;
     String input;
-    String lastComputerWord;
     String message;
 
     //Створюємо компоненти.
     JLabel computerLabel = new JLabel("Комп’ютер:");
     JLabel userLabel = new JLabel("Гравець:");
-    JLabel computerWordLabel = new JLabel("lastComputerWord");
+    JLabel computerWordLabel = new JLabel("");
     JTextField userWordField = new JTextField(15);
     JButton nextButton = new JButton("V");
-    JLabel messageLabel = new JLabel("message");
+    JLabel messageLabel = new JLabel("");
 
     GameWindow() {
+
         //Створюємо фрейм и задаємо розміри і положення компонентів.
         frame = new JFrame("Міста!");
         frame.setSize(516, 260);
@@ -72,7 +73,9 @@ public class GameWindow implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String input = userWordField.getText();
+        input = userWordField.getText();
     }
+    GameLoop gameLoop = new GameLoop(input); //Передаємо input до GameLoop для подальшої обробки.
+
 }
 

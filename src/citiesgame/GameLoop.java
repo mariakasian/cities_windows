@@ -3,27 +3,28 @@ package citiesgame;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Scanner;
 
 import static citiesgame.IsEnd.isEndFromComputer;
 import static citiesgame.IsEnd.isEndFromUser;
 import static citiesgame.IsRepeated.isRepeatedByUser;
 
 public class GameLoop {
-        public static void gameLoop() {
+    String input;
+
+    GameLoop(String input){
+         this.input = input;
+    }
+    public static void gameLoop() {
         List<String> usedCities = new ArrayList<>();
-        int userScore = 0;
-        int computerScore = 0;
-        Scanner scanner = new Scanner(System.in);
-        char lastUserWordChar;
+        String input = new GameWindow().input; //Отримуємо input із ігрового вікна.
         String lastComputerWord = null;
         boolean isCorrectCity;
         boolean isValid;
+        char lastUserWordChar;
+        int userScore = 0;
+        int computerScore = 0;
 
         while (true) {
-
-            GameWindow gameWindow = new GameWindow();
-            String input = gameWindow.input;
 
             //isEnd від юзера.
             isEndFromUser(input, userScore, computerScore);
@@ -55,8 +56,8 @@ public class GameLoop {
 
             //Хід компьютера.
             lastComputerWord = GetRandomCity.getRandomCity(lastUserWordChar, usedCities);
-
             usedCities.add(lastComputerWord);
+            new GameWindow().computerWordLabel.setText("" + lastComputerWord); // Відображаємо хід компьютера в вікні.
 
             //isEnd від комп'ютера.
             isEndFromComputer(lastComputerWord, userScore, computerScore);

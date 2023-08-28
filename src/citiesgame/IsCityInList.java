@@ -15,7 +15,7 @@ public class IsCityInList {
             }
         }
         if (!isCorrectCity) {
-            String message = "Такого міста не існує в базі даних. Введіть інше місто!";
+            new GameWindow().messageLabel.setText("Такого міста не існує в базі даних. Введіть інше місто!");
         }
         return isCorrectCity;
     }

@@ -5,20 +5,24 @@ import java.awt.*;
 
 public class FinalWindow {
     JFrame frame;
-    String whoLose;
-    String winner;
-    int userScore;
-    int computerScore;
+    JLabel whoLoseLabel;
+    JLabel thanksLabel;
+    JLabel winnerLabel;
+    JLabel scoreLabel;
+    JButton endButton;
+    JLabel userScoreLabel;
+    JLabel computerScoreLabel;
+
     FinalWindow() {
 
         //Створюємо компоненти.
-        JLabel whoLoseLabel = new JLabel("" + whoLose);
-        JLabel thanksLabel = new JLabel("Дякую за гру! Тепер ви краще знаєте міста України.");
-        JLabel winnerLabel = new JLabel("Перемогу отримав: " + winner);
-        JLabel scoreLabel = new JLabel("Рахунок:");
-        JLabel userScoreLabel = new JLabel("гравець: " + userScore + " балів");
-        JLabel computerScoreLabel = new JLabel("комп’ютер: " + computerScore + " балів");
-        JButton endButton = new JButton("Завершити");
+        whoLoseLabel = new JLabel();
+        thanksLabel = new JLabel("Дякую за гру! Тепер ви краще знаєте міста України.");
+        winnerLabel = new JLabel();
+        scoreLabel = new JLabel("Рахунок:");
+        userScoreLabel = new JLabel();
+        computerScoreLabel = new JLabel();
+        endButton = new JButton("Завершити");
 
         //Створюємо фрейм и задаємо розміри і положенння компонентів.
         frame = new JFrame("Вітаємо!");

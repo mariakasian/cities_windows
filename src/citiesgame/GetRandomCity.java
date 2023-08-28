@@ -5,7 +5,9 @@ import java.util.List;
 import java.util.Random;
 
 public class GetRandomCity {
+
     public static String getRandomCity(char firstChar, List<String> usedCities) {
+        String lastComputerWord;
         List<String> properCities = new ArrayList<>();
         List<String> cities = FillCities.fillCities();
         for (String city : cities) {
@@ -23,6 +25,8 @@ public class GetRandomCity {
 
         Random random = new Random();
         int index = random.nextInt(properCities.size());
-        return properCities.get(index);
+        lastComputerWord = properCities.get(index);
+        GameWindow gameWindow = new GameWindow();
+        return lastComputerWord;
     }
 }
