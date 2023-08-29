@@ -16,7 +16,8 @@ public class GameLoop {
     }
     public static void gameLoop() {
         List<String> usedCities = new ArrayList<>();
-        String input = new GameWindow().input; //Отримуємо input із ігрового вікна.
+        GameWindow gameWindow = new GameWindow();
+        String input = gameWindow.input; //Отримуємо input із ігрового вікна.
         String lastComputerWord = null;
         boolean isCorrectCity;
         boolean isValid;
@@ -57,12 +58,11 @@ public class GameLoop {
             //Хід компьютера.
             lastComputerWord = GetRandomCity.getRandomCity(lastUserWordChar, usedCities);
             usedCities.add(lastComputerWord);
-            new GameWindow().computerWordLabel.setText("" + lastComputerWord); // Відображаємо хід компьютера в вікні.
+            gameWindow.computerWordLabel.setText("" + lastComputerWord); // Відображаємо хід компьютера в вікні.
+            gameWindow.userWordField.setText(""); //Очищаємо поле для користувача.
 
             //isEnd від комп'ютера.
             isEndFromComputer(lastComputerWord, userScore, computerScore);
-
-            System.out.println("Моє місто: " + lastComputerWord);
 
             //Ведемо рахунок балів компьютера.
             computerScore += (lastComputerWord != null ? lastComputerWord.length() * 5 : 0);

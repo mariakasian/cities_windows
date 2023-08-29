@@ -73,6 +73,7 @@ public class FinalWindow {
 
         endButton.addActionListener(e -> {
             frame.dispose(); // Закриття фінального вікна.
+            System.exit(0);
         });
     }
 }
