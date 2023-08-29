@@ -9,7 +9,6 @@ public class GameWindow implements ActionListener {
 
     JFrame frame;
     String input;
-    String message;
 
     //Створюємо компоненти.
     JLabel computerLabel = new JLabel("Комп’ютер:");
