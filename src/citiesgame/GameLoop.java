@@ -1,23 +1,18 @@
 package citiesgame;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Objects;
 
+
+import static citiesgame.ComputerWordToGameWindow.computerWordToGameWindow;
 import static citiesgame.IsEnd.isEndFromComputer;
 import static citiesgame.IsEnd.isEndFromUser;
 import static citiesgame.IsRepeated.isRepeatedByUser;
 
 public class GameLoop {
-    String input;
 
-    GameLoop(String input){
-         this.input = input;
-    }
-    public static void gameLoop() {
-        List<String> usedCities = new ArrayList<>();
-        GameWindow gameWindow = new GameWindow();
-        String input = gameWindow.input; //Отримуємо input із ігрового вікна.
+    public static void gameLoop(String input) {
+        HashSet<String> usedCities = new HashSet<>();
         String lastComputerWord = null;
         boolean isCorrectCity;
         boolean isValid;
@@ -58,8 +53,6 @@ public class GameLoop {
             //Хід компьютера.
             lastComputerWord = GetRandomCity.getRandomCity(lastUserWordChar, usedCities);
             usedCities.add(lastComputerWord);
-            gameWindow.computerWordLabel.setText("" + lastComputerWord); // Відображаємо хід компьютера в вікні.
-            gameWindow.userWordField.setText(""); //Очищаємо поле для користувача.
 
             //isEnd від комп'ютера.
             isEndFromComputer(lastComputerWord, userScore, computerScore);
@@ -69,6 +62,8 @@ public class GameLoop {
 
             //Перевірка, якщо місто, яке ввів комп'ютер, закінчується на неіснуючу літеру.
             IsComputerInvalidLastChar.isComputerInvalidLastChar(Objects.requireNonNull(lastComputerWord));
+
+            computerWordToGameWindow(lastComputerWord);
         }
     }
 }

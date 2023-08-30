@@ -1,11 +1,13 @@
 package citiesgame;
 
-import java.util.List;
+import java.util.HashSet;
+
+import static citiesgame.GameWindow.messageLabel;
 
 public class IsCityInList {
     public static boolean isCityInList(String input) {
 
-        List<String> cities = FillCities.fillCities();
+        HashSet<String> cities = FillCities.fillCities();
         boolean isCorrectCity = false;
 
         for (String city : cities) {
@@ -15,7 +17,7 @@ public class IsCityInList {
             }
         }
         if (!isCorrectCity) {
-            new GameWindow().messageLabel.setText("Такого міста не існує в базі даних. Введіть інше місто!");
+            messageLabel.setText("Такого міста не існує в базі даних. Введіть інше місто!");
         }
         return isCorrectCity;
     }

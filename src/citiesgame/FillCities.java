@@ -1,11 +1,12 @@
 package citiesgame;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.Collections;
+import java.util.HashSet;
 
 public class FillCities {
-    public static List<String> fillCities() {
-        List<String> cities = Arrays.asList("Авдіївка",
+    public static HashSet<String> fillCities() {
+        HashSet<String> cities = new HashSet<>();
+        String[] listOfCities = {"Авдіївка",
                 "Алмазна",
                 "Алупка",
                 "Алушта",
@@ -114,7 +115,6 @@ public class FillCities {
                 "Городенка",
                 "Городище",
                 "Городня",
-                "Городок",
                 "Городок",
                 "Горохів",
                 "Гребінка",
@@ -480,7 +480,10 @@ public class FillCities {
                 "Ялта",
                 "Ямпіль",
                 "Яремче",
-                "Ясинувата");
+                "Ясинувата"
+
+        };
+        Collections.addAll(cities, listOfCities);
         return cities;
     }
 }

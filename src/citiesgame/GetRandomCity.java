@@ -1,15 +1,16 @@
 package citiesgame;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 
 public class GetRandomCity {
 
-    public static String getRandomCity(char firstChar, List<String> usedCities) {
+    public static String getRandomCity(char firstChar, HashSet<String> usedCities) {
         String lastComputerWord;
         List<String> properCities = new ArrayList<>();
-        List<String> cities = FillCities.fillCities();
+        HashSet<String> cities = FillCities.fillCities();
         for (String city : cities) {
             if (Character.toLowerCase(city.charAt(0)) == Character.toLowerCase(firstChar)) {
                 properCities.add(city);
@@ -26,7 +27,6 @@ public class GetRandomCity {
         Random random = new Random();
         int index = random.nextInt(properCities.size());
         lastComputerWord = properCities.get(index);
-        GameWindow gameWindow = new GameWindow();
         return lastComputerWord;
     }
 }
