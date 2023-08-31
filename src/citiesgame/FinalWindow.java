@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class FinalWindow {
-    JFrame frame;
+    JFrame finalFrame;
     JLabel whoLoseLabel;
     JLabel thanksLabel;
     JLabel winnerLabel;
@@ -25,8 +25,8 @@ public class FinalWindow {
         endButton = new JButton("Завершити");
 
         //Створюємо фрейм и задаємо розміри і положенння компонентів.
-        frame = new JFrame("Вітаємо!");
-        frame.setSize(516,260);
+        finalFrame = new JFrame("Вітаємо!");
+        finalFrame.setSize(516,260);
         whoLoseLabel.setBounds(36, 22, 440, 30);
         thanksLabel.setBounds(36, 56, 440, 30);
         winnerLabel.setBounds(36, 80, 440, 30);
@@ -35,20 +35,20 @@ public class FinalWindow {
         computerScoreLabel.setBounds(36, 170, 200, 30);
         endButton.setBounds(330,142,140,48);
 
-        frame.add(whoLoseLabel);
-        frame.add(thanksLabel);
-        frame.add(winnerLabel);
-        frame.add(scoreLabel);
-        frame.add(userScoreLabel);
-        frame.add(computerScoreLabel);
-        frame.add(endButton);
+        finalFrame.add(whoLoseLabel);
+        finalFrame.add(thanksLabel);
+        finalFrame.add(winnerLabel);
+        finalFrame.add(scoreLabel);
+        finalFrame.add(userScoreLabel);
+        finalFrame.add(computerScoreLabel);
+        finalFrame.add(endButton);
 
-        frame.setLayout(null);
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        finalFrame.setLayout(null);
+        finalFrame.setVisible(true);
+        finalFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        frame.setForeground(Color.BLUE);
-        frame.getContentPane().setBackground(Color.YELLOW);
+        finalFrame.setForeground(Color.BLUE);
+        finalFrame.getContentPane().setBackground(Color.YELLOW);
         whoLoseLabel.setForeground(Color.BLACK);
         thanksLabel.setForeground(Color.BLUE);
         winnerLabel.setForeground(Color.BLUE);
@@ -72,7 +72,7 @@ public class FinalWindow {
         endButton.setFont(buttonFont);
 
         endButton.addActionListener(e -> {
-            frame.dispose(); // Закриття фінального вікна.
+            finalFrame.dispose(); // Закриття фінального вікна.
             System.exit(0);
         });
     }
