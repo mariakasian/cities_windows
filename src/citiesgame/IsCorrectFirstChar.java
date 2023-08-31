@@ -1,10 +1,10 @@
 package citiesgame;
 
 import static citiesgame.GameLoop.gameLoop;
-import static citiesgame.GameWindow.lastComputerWord;
+
 import static citiesgame.GameWindow.messageArea;
 import static citiesgame.IsComputerInvalidLastChar.isComputerInvalidLastChar;
-
+import static citiesgame.IsEnd.lastComputerWord;
 
 
 public class IsCorrectFirstChar {

@@ -4,17 +4,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
-
-import static citiesgame.FillCities.fillCities;
 import static citiesgame.GameLoop.gameLoop;
-
+import static citiesgame.IsEnd.isEndFromUser;
 
 public class GameWindow implements ActionListener {
 
     static JFrame gameFrame;
     static  String input;
-    static String lastComputerWord = null;
 
     //Створюємо компоненти.
     JLabel computerLabel = new JLabel("Комп’ютер:");
@@ -88,7 +84,8 @@ public class GameWindow implements ActionListener {
         input = userWordField.getText();
         userStep.setBackground(Color.BLUE);
         userStep.setForeground(Color.YELLOW);
-        gameLoop(input, lastComputerWord);
+        isEndFromUser(input);
+
     }
 }
 

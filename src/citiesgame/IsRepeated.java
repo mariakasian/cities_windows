@@ -3,8 +3,9 @@ package citiesgame;
 import java.util.HashSet;
 
 import static citiesgame.GameLoop.gameLoop;
-import static citiesgame.GameWindow.lastComputerWord;
+
 import static citiesgame.GameWindow.messageArea;
+import static citiesgame.IsEnd.lastComputerWord;
 
 public class IsRepeated {
     public static HashSet<String> isRepeatedByUser(String input, HashSet<String> usedCities) {

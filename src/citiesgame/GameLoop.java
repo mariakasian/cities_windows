@@ -6,7 +6,6 @@ import java.util.Objects;
 import static citiesgame.ComputerWordToGameWindow.computerWordToGameWindow;
 import static citiesgame.FillCities.cities;
 import static citiesgame.IsEnd.isEndFromComputer;
-import static citiesgame.IsEnd.isEndFromUser;
 import static citiesgame.IsRepeated.isRepeatedByUser;
 import static citiesgame.Score.computerScore;
 import static citiesgame.Score.userScore;
@@ -20,7 +19,7 @@ public class GameLoop {
         char lastUserWordChar;
 
         //Чи ввів юзер "здаюсь"?
-        isEndFromUser(input, lastComputerWord);
+//        isEndFromUser(input);
 
         //Перевіряємо, чи місто, що ввів користувач, є в списку міст.
         IsCityInList.isCityInList(input, cities);
