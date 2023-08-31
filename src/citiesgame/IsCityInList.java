@@ -19,10 +19,11 @@ public class IsCityInList {
             }
         }
         if (!isCorrectCity) {
-            if (lastComputerWord != null)
+            if (lastComputerWord != null){
                 messageArea.setText("Такого міста не існує в базі даних. Введіть ще раз місто на лутеру '" + lastComputerWordChar + "'!");
             } else {
                 messageArea.setText("Такого міста не існує в базі даних. Введіть інше місто!");
+            }
         }
     }
 }
