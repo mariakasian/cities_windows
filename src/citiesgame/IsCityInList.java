@@ -2,10 +2,9 @@ package citiesgame;
 
 import java.util.HashSet;
 
-import static citiesgame.GameLoop.gameLoop;
 import static citiesgame.GameWindow.messageArea;
+import static citiesgame.IsComputerInvalidLastChar.lastComputerWordChar;
 import static citiesgame.IsEnd.lastComputerWord;
-
 
 public class IsCityInList {
     public static void isCityInList(String input, HashSet<String> cities) {
@@ -20,8 +19,10 @@ public class IsCityInList {
             }
         }
         if (!isCorrectCity) {
-            messageArea.setText("Такого міста не існує в базі даних. Введіть інше місто!");
-            gameLoop(input, lastComputerWord);
+            if (lastComputerWord != null)
+                messageArea.setText("Такого міста не існує в базі даних. Введіть ще раз місто на лутеру '" + lastComputerWordChar + "'!");
+            } else {
+                messageArea.setText("Такого міста не існує в базі даних. Введіть інше місто!");
         }
     }
 }

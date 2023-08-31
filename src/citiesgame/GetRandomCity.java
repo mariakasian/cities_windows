@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class GetRandomCity {
 
-    public static String getRandomCity(char firstChar, HashSet<String> cities, HashSet<String> usedCities) {
+    public static String getRandomCity(char firstChar, HashSet<String> cities, List<String> usedCities) {
         String lastComputerWord;
         List<String> properCities = new ArrayList<>();
         for (String city : cities) {

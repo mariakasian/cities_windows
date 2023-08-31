@@ -1,18 +1,14 @@
 package citiesgame;
 
-import java.util.HashSet;
-
-import static citiesgame.GameLoop.gameLoop;
+import java.util.List;
 
 import static citiesgame.GameWindow.messageArea;
-import static citiesgame.IsEnd.lastComputerWord;
+import static citiesgame.IsComputerInvalidLastChar.lastComputerWordChar;
 
 public class IsRepeated {
-    public static HashSet<String> isRepeatedByUser(String input, HashSet<String> usedCities) {
-        boolean isCityUsedByUser = usedCities.contains(input);
-        if (isCityUsedByUser) {
-            messageArea.setText("Таке місто вже було. Введіть інше місто!");
-            gameLoop(input, lastComputerWord);
+    public static List<String> isRepeatedByUser(String input, List<String> usedCities) {
+        if (usedCities.contains(input)) {
+            messageArea.setText("Таке місто вже було. Введіть інше місто на літеру '" + lastComputerWordChar + "'!");
         } else {
             usedCities.add(input);
         }

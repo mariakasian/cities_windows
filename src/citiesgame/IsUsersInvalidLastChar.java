@@ -10,7 +10,6 @@ public class IsUsersInvalidLastChar {
                     + "', я ввів місто на літеру 'і'.");
             lastUserWordChar = 'І';
         }
-
         return lastUserWordChar;
     }
 }

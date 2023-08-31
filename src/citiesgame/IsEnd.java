@@ -1,7 +1,8 @@
 package citiesgame;
 
-import static citiesgame.GameLoop.*;
+import static citiesgame.ComputerStep.computerScore;
 import static citiesgame.GameWindow.gameFrame;
+import static citiesgame.UserStep.*;
 
 public class IsEnd {
     static String lastComputerWord = null;
@@ -14,9 +15,8 @@ public class IsEnd {
             finalWindow.winnerLabel.setText("Перемогу отримав: компьютер");
             finalWindow.userScoreLabel.setText("гравець: " + userScore + " балів");
             finalWindow.computerScoreLabel.setText("комп’ютер: " + computerScore + " балів");
-        } else {
-            gameLoop(input, lastComputerWord);
         }
+        userStep(input,lastComputerWord);
     }
     public static void isEndFromComputer(String lastComputerWord) {
 

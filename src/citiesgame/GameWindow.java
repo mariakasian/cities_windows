@@ -4,13 +4,20 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import static citiesgame.GameLoop.gameLoop;
+import java.util.ArrayList;
+import java.util.List;
+
+import static citiesgame.FillCities.cities;
+import static citiesgame.IsCityInList.isCityInList;
 import static citiesgame.IsEnd.isEndFromUser;
+import static citiesgame.IsEnd.lastComputerWord;
+import static citiesgame.IsRepeated.isRepeatedByUser;
+
 
 public class GameWindow implements ActionListener {
-
     static JFrame gameFrame;
     static  String input;
+    static List<String> usedCities = new ArrayList<>();
 
     //Створюємо компоненти.
     JLabel computerLabel = new JLabel("Комп’ютер:");
@@ -84,8 +91,9 @@ public class GameWindow implements ActionListener {
         input = userWordField.getText();
         userStep.setBackground(Color.BLUE);
         userStep.setForeground(Color.YELLOW);
-        isEndFromUser(input);
 
+        //Чи ввів юзер "здаюсь"?
+        isEndFromUser(input);
     }
 }
 
