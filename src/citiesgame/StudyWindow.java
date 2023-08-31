@@ -16,33 +16,33 @@ public class StudyWindow {
     StudyWindow() {
 
         //Создаём компоненты
-        JLabel askForLetter = new JLabel("Введіть літеру алфавіта:");
+        JLabel askForLetter = new JLabel("Оберіть літеру алфавіта:");
         final JComboBox chooseLetter = new JComboBox(letters);
         JButton backButton = new JButton("Назад");
         final JList<String> citiesList = new JList<>();
         JScrollPane scrollPane = new JScrollPane(citiesList);
 
         //Создаём фрейм и задаём размеры и раположение компонентов
-        JFrame frame = new JFrame("Вивчаймо міста України!");
-        frame.setSize(516,400);
+        JFrame studyFrame = new JFrame("Вивчаймо міста України!");
+        studyFrame.setSize(516,400);
 
         askForLetter.setBounds(40,30,280,30);
         chooseLetter.setBounds(366,30,100,30);
         backButton.setBounds(366,290,100,40);
         scrollPane.setBounds(40,80,280,250);
 
-        frame.add(askForLetter);
-        frame.add(chooseLetter);
-        frame.add(backButton);
-        frame.add(scrollPane);
+        studyFrame.add(askForLetter);
+        studyFrame.add(chooseLetter);
+        studyFrame.add(backButton);
+        studyFrame.add(scrollPane);
 
-        frame.setLayout(null);
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        studyFrame.setLayout(null);
+        studyFrame.setVisible(true);
+        studyFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Змінюємо колір фону вікна на жовтий
-        frame.setForeground(Color.BLUE);
-        frame.getContentPane().
+        studyFrame.setForeground(Color.BLUE);
+        studyFrame.getContentPane().
 
         setBackground(Color.YELLOW);
 
@@ -70,7 +70,7 @@ public class StudyWindow {
 
         backButton.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
-                frame.dispose(); //Закриваємо StudyWindow.
+                studyFrame.dispose(); //Закриваємо StudyWindow.
                 GreatingWindow greatingWindow = new GreatingWindow(); //Відкриваємо вітальне вікно.
             }
         });

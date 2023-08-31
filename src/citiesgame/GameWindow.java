@@ -88,11 +88,6 @@ public class GameWindow implements ActionListener {
         input = userWordField.getText();
         userStep.setBackground(Color.BLUE);
         userStep.setForeground(Color.YELLOW);
-        try {
-            fillCities();
-        } catch (FileNotFoundException ex) {
-            throw new RuntimeException(ex);
-        }
         gameLoop(input, lastComputerWord);
     }
 }
