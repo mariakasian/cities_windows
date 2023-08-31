@@ -1,13 +1,13 @@
 package citiesgame;
 
-import static citiesgame.GameWindow.messageLabel;
+import static citiesgame.GameWindow.messageArea;
 
 public class IsUsersInvalidLastChar {
     public static char isUsersInvalidLastChar(String input) {
         char lastUserWordChar = Character.toLowerCase(input.charAt(input.length() - 1));
         if (lastUserWordChar == 'ь' || lastUserWordChar == 'и' || lastUserWordChar == 'й' || lastUserWordChar == 'ї') {
-            messageLabel.setText("Так як немає міста на літеру '" + lastUserWordChar
-                    + "', я введу місто на літеру 'і'.");
+            messageArea.setText("Так як немає міста на літеру '" + lastUserWordChar
+                    + "', я ввів місто на літеру 'і'.");
             lastUserWordChar = 'І';
         }
 

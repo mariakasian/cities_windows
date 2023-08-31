@@ -2,6 +2,8 @@ package citiesgame;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class GreatingWindow {
     JFrame greatingFrame;
@@ -45,8 +47,8 @@ public class GreatingWindow {
         playButton.setFont(buttonFont);
 
         playButton.addActionListener(e -> {
-                greatingFrame.dispose(); // Закриття вітального вікна
-                GameWindow gameWindow = new GameWindow(); // Відкриття ігрового вікна
+            greatingFrame.dispose(); // Закриття вітального вікна
+            GameWindow gameWindow = new GameWindow(); // Відкриття ігрового вікна
         });
     }
 }

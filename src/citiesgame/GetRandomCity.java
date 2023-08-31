@@ -7,10 +7,9 @@ import java.util.Random;
 
 public class GetRandomCity {
 
-    public static String getRandomCity(char firstChar, HashSet<String> usedCities) {
+    public static String getRandomCity(char firstChar, HashSet<String> cities, HashSet<String> usedCities) {
         String lastComputerWord;
         List<String> properCities = new ArrayList<>();
-        HashSet<String> cities = FillCities.fillCities();
         for (String city : cities) {
             if (Character.toLowerCase(city.charAt(0)) == Character.toLowerCase(firstChar)) {
                 properCities.add(city);
