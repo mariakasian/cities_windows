@@ -2,15 +2,13 @@ package citiesgame;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.HashSet;
 
-import static citiesgame.FillCities.cities;
+import static citiesgame.GreatingWindow.cities;
 
 public class StudyWindow {
 
-    String letters[] = {"А", "Б", "В", "Г", "Д", "Е", "Є", "Ж", "З", "І", "К", "Л", "М", "Н", "О", "П",
+    String[] letters = {"А", "Б", "В", "Г", "Д", "Е", "Є", "Ж", "З", "І", "К", "Л", "М", "Н", "О", "П",
             "Р", "С", "Т", "У", "Ф", "Х", "Ч", "Ш", "Щ", "Ю", "Я"};
 
     StudyWindow() {
@@ -73,22 +71,18 @@ public class StudyWindow {
         int y = (screenHeight - windowHeight) / 2;
         studyFrame.setLocation(x, y);
 
-        chooseLetter.addActionListener(new ActionListener() {
-            public void actionPerformed (ActionEvent e){
-                String firstLetter = "" + chooseLetter.getItemAt(chooseLetter.getSelectedIndex());
-                citiesList.setModel(suitableCities(firstLetter, cities));
-            }
+        chooseLetter.addActionListener(e -> {
+            String firstLetter = "" + chooseLetter.getItemAt(chooseLetter.getSelectedIndex());
+            citiesList.setModel(suitableCities(firstLetter, cities));
         });
 
-        backButton.addActionListener(new ActionListener() {
-            public void actionPerformed (ActionEvent e){
-                studyFrame.dispose(); //Закриваємо StudyWindow.
-                GreatingWindow greatingWindow = new GreatingWindow(); //Відкриваємо вітальне вікно.
-            }
+        backButton.addActionListener(e -> {
+            studyFrame.dispose(); //Закриваємо StudyWindow.
+            GreatingWindow greatingWindow = new GreatingWindow(); //Відкриваємо вітальне вікно.
         });
     }
 
-    public static DefaultListModel<String> suitableCities(String firstLetter, HashSet<String> cities) {
+    private DefaultListModel<String> suitableCities(String firstLetter, HashSet<String> cities) {
         char letter = firstLetter.charAt(0);
         DefaultListModel<String> suitableCities = new DefaultListModel<>();
 

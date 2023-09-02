@@ -7,13 +7,13 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import static citiesgame.IsEnd.isEndFromUser;
+import static citiesgame.UserStep.userStep;
 
 public class GameWindow implements ActionListener {
     static JFrame gameFrame;
     static  String input;
+    static String lastComputerWord = null;
     static List<String> usedCities = new ArrayList<>();
-    static boolean isValid = true;
 
     //Створюємо компоненти.
     JLabel computerLabel = new JLabel("Комп’ютер:");
@@ -73,8 +73,8 @@ public class GameWindow implements ActionListener {
         // Змінюємо колір тексту для JLabel-ів та JButton.
         userLabel.setForeground(Color.BLUE);
         userWordField.setForeground(Color.BLACK);
-        userStep.setBackground(Color.LIGHT_GRAY);
-        userStep.setForeground(Color.BLACK);
+        userStep.setBackground(Color.BLUE);
+        userStep.setForeground(Color.YELLOW);
         computerLabel.setForeground(Color.BLUE);
         computerWordLabel.setForeground(Color.BLACK);
         attention.setForeground(Color.BLUE);
@@ -97,11 +97,12 @@ public class GameWindow implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         input = userWordField.getText();
-        userStep.setBackground(Color.BLUE);
-        userStep.setForeground(Color.YELLOW);
 
-        //Чи ввів юзер "здаюсь"?
-        isEndFromUser(input);
+        try {
+            userStep(input, lastComputerWord);
+        } catch (InterruptedException ex) {
+            throw new RuntimeException(ex);
+        }
     }
 }
 

@@ -2,12 +2,16 @@ package citiesgame;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-
-import static citiesgame.FillCities.fillCities;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashSet;
+import java.util.Scanner;
 
 public class GreatingWindow {
     JFrame greatingFrame;
+    static HashSet<String> cities = new HashSet<>();
 
     GreatingWindow() {
 
@@ -86,6 +90,25 @@ public class GreatingWindow {
         });
     }
 
+    private static void fillCities() throws FileNotFoundException {
+        String fileName = "files/cities.txt";
+        try {
+            FileReader file = new FileReader(fileName);
+            BufferedReader br = new BufferedReader(file);
+            Scanner s = new Scanner(br);
+
+            String manyCities;
+
+            while (s.hasNextLine()) {
+                manyCities = s.nextLine();
+                cities.add(manyCities.strip());
+            }
+            s.close();
+
+        } catch (IOException e) {
+            System.err.println("Помилка при читанні файлу: " + e.getMessage());
+        }
+    }
 }
 
 
