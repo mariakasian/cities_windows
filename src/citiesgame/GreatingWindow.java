@@ -19,7 +19,9 @@ public class GreatingWindow {
 
         //Створюємо фрейм і задаємо розміри і положення компонентів.
         greatingFrame = new JFrame("Вітаємо!");
-        greatingFrame.setSize(516, 200);
+        int windowWidth = 516;
+        int windowHeight = 200;
+        greatingFrame.setSize(windowWidth, windowHeight);
         greatingLabel1.setBounds(40, 40, 300, 30);
         greatingLabel2.setBounds(40, 82, 300, 30);
         studyButton.setBounds(320,30,140,36);
@@ -52,6 +54,16 @@ public class GreatingWindow {
         Font buttonFont = new Font("Arial", Font.BOLD, 20);
         studyButton.setFont(buttonFont);
         playButton.setFont(buttonFont);
+
+        // Отримання розмірів екрану
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int screenWidth = screenSize.width;
+        int screenHeight = screenSize.height;
+
+        // Розрахунок координат для вікна, щоб відкрити його посередині екрану
+        int x = (screenWidth - windowWidth) / 2;
+        int y = (screenHeight - windowHeight) / 2;
+        greatingFrame.setLocation(x, y);
 
         studyButton.addActionListener(e -> {
             try {

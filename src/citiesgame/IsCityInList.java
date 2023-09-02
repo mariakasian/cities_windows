@@ -2,6 +2,7 @@ package citiesgame;
 
 import java.util.HashSet;
 
+import static citiesgame.GameWindow.isValid;
 import static citiesgame.GameWindow.messageArea;
 import static citiesgame.IsComputerInvalidLastChar.lastComputerWordChar;
 import static citiesgame.IsEnd.lastComputerWord;
@@ -19,6 +20,7 @@ public class IsCityInList {
             }
         }
         if (!isCorrectCity) {
+            isValid = false;
             if (lastComputerWord != null){
                 messageArea.setText("Такого міста не існує в базі даних. Введіть ще раз місто на лутеру '" + lastComputerWordChar + "'!");
             } else {

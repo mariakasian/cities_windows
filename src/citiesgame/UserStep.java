@@ -2,6 +2,7 @@ package citiesgame;
 
 import static citiesgame.ComputerStep.computerStep;
 import static citiesgame.FillCities.cities;
+import static citiesgame.GameWindow.isValid;
 import static citiesgame.GameWindow.usedCities;
 import static citiesgame.IsCityInList.isCityInList;
 import static citiesgame.IsRepeated.isRepeatedByUser;

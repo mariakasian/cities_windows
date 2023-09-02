@@ -7,17 +7,13 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import static citiesgame.FillCities.cities;
-import static citiesgame.IsCityInList.isCityInList;
 import static citiesgame.IsEnd.isEndFromUser;
-import static citiesgame.IsEnd.lastComputerWord;
-import static citiesgame.IsRepeated.isRepeatedByUser;
-
 
 public class GameWindow implements ActionListener {
     static JFrame gameFrame;
     static  String input;
     static List<String> usedCities = new ArrayList<>();
+    static boolean isValid = true;
 
     //Створюємо компоненти.
     JLabel computerLabel = new JLabel("Комп’ютер:");
@@ -33,7 +29,9 @@ public class GameWindow implements ActionListener {
 
         //Створюємо фрейм и задаємо розміри і положення компонентів.
         gameFrame = new JFrame("Міста!");
-        gameFrame.setSize(516, 300);
+        int windowWidth = 516;
+        int windowHeight = 300;
+        gameFrame.setSize(windowWidth, windowHeight);
         userLabel.setBounds(36, 30, 108, 30);
         userWordField.setBounds(170, 30, 225, 30);
         userStep.setBounds(395, 30, 80, 30);
@@ -81,6 +79,16 @@ public class GameWindow implements ActionListener {
         computerWordLabel.setForeground(Color.BLACK);
         attention.setForeground(Color.BLUE);
         messageArea.setForeground(Color.BLACK);
+
+        // Отримання розмірів екрану
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int screenWidth = screenSize.width;
+        int screenHeight = screenSize.height;
+
+        // Розрахунок координат для вікна, щоб відкрити його посередині екрану
+        int x = (screenWidth - windowWidth) / 2;
+        int y = (screenHeight - windowHeight) / 2;
+        gameFrame.setLocation(x, y);
 
         userWordField.addActionListener(this);
         userStep.addActionListener(this);

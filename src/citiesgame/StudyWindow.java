@@ -24,7 +24,9 @@ public class StudyWindow {
 
         //Создаём фрейм и задаём размеры и раположение компонентов
         JFrame studyFrame = new JFrame("Вивчаймо міста України!");
-        studyFrame.setSize(516,400);
+        int windowWidth = 516;
+        int windowHeight = 400;
+        studyFrame.setSize(windowWidth, windowHeight);
 
         askForLetter.setBounds(40,30,280,30);
         chooseLetter.setBounds(366,30,100,30);
@@ -60,6 +62,16 @@ public class StudyWindow {
         citiesList.setForeground(Color.BLACK);
         backButton.setForeground(Color.YELLOW);
         backButton.setBackground(Color.BLUE);
+
+        // Отримання розмірів екрану
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int screenWidth = screenSize.width;
+        int screenHeight = screenSize.height;
+
+        // Розрахунок координат для вікна, щоб відкрити його посередині екрану
+        int x = (screenWidth - windowWidth) / 2;
+        int y = (screenHeight - windowHeight) / 2;
+        studyFrame.setLocation(x, y);
 
         chooseLetter.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){

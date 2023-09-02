@@ -2,6 +2,7 @@ package citiesgame;
 
 import static citiesgame.ComputerStep.computerScore;
 import static citiesgame.GameWindow.gameFrame;
+import static citiesgame.GameWindow.isValid;
 import static citiesgame.UserStep.*;
 
 public class IsEnd {

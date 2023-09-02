@@ -26,7 +26,9 @@ public class FinalWindow {
 
         //Створюємо фрейм и задаємо розміри і положенння компонентів.
         finalFrame = new JFrame("Вітаємо!");
-        finalFrame.setSize(516,260);
+        int windowWidth = 516;
+        int windowHeight = 260;
+        finalFrame.setSize(windowWidth, windowHeight);
         whoLoseLabel.setBounds(36, 22, 440, 30);
         thanksLabel.setBounds(36, 56, 440, 30);
         winnerLabel.setBounds(36, 80, 440, 30);
@@ -70,6 +72,16 @@ public class FinalWindow {
         // Зміна розміру шрифта для startButton.
         Font buttonFont = new Font("Arial", Font.BOLD, 18);
         endButton.setFont(buttonFont);
+
+        // Отримання розмірів екрану
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int screenWidth = screenSize.width;
+        int screenHeight = screenSize.height;
+
+        // Розрахунок координат для вікна, щоб відкрити його посередині екрану
+        int x = (screenWidth - windowWidth) / 2;
+        int y = (screenHeight - windowHeight) / 2;
+        finalFrame.setLocation(x, y);
 
         endButton.addActionListener(e -> {
             finalFrame.dispose(); // Закриття фінального вікна.
