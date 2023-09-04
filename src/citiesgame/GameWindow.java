@@ -10,6 +10,44 @@ import java.util.List;
 import static citiesgame.UserStep.userStep;
 
 public class GameWindow implements ActionListener {
+    private static final int WINDOW_WIDTH = 516;
+    private static final int WINDOW_HEIGHT = 300;
+
+    private static final int USER_LABEL_X = 36;
+    private static final int USER_LABEL_Y = 30;
+    private static final int USER_LABEL_WIDTH = 108;
+    private static final int USER_LABEL_HEIGHT = 30;
+
+    private static final int USER_WORD_FIELD_X = 170;
+    private static final int USER_WORD_FIELD_Y = 30;
+    private static final int USER_WORD_FIELD_WIDTH = 225;
+    private static final int USER_WORD_FIELD_HEIGHT = 30;
+
+    private static final int USER_STEP_X = 395;
+    private static final int USER_STEP_Y = 30;
+    private static final int USER_STEP_WIDTH = 80;
+    private static final int USER_STEP_HEIGHT = 30;
+
+    private static final int COMPUTER_LABEL_X = 36;
+    private static final int COMPUTER_LABEL_Y = 90;
+    private static final int COMPUTER_LABEL_WIDTH = 108;
+    private static final int COMPUTER_LABEL_HEIGHT = 30;
+
+    private static final int COMPUTER_WORD_LABEL_X = 170;
+    private static final int COMPUTER_WORD_LABEL_Y = 90;
+    private static final int COMPUTER_WORD_LABEL_WIDTH = 284;
+    private static final int COMPUTER_WORD_LABEL_HEIGHT = 30;
+
+    private static final int ATTENTION_X = 36;
+    private static final int ATTENTION_Y = 140;
+    private static final int ATTENTION_WIDTH = 108;
+    private static final int ATTENTION_HEIGHT = 30;
+
+    private static final int SCROLL_PANE_X = 36;
+    private static final int SCROLL_PANE_Y = 170;
+    private static final int SCROLL_PANE_WIDTH = 440;
+    private static final int SCROLL_PANE_HEIGHT = 60;
+
     static JFrame gameFrame;
     static  String input;
     static String lastComputerWord = null;
@@ -29,16 +67,14 @@ public class GameWindow implements ActionListener {
 
         //Створюємо фрейм и задаємо розміри і положення компонентів.
         gameFrame = new JFrame("Міста!");
-        int windowWidth = 516;
-        int windowHeight = 300;
-        gameFrame.setSize(windowWidth, windowHeight);
-        userLabel.setBounds(36, 30, 108, 30);
-        userWordField.setBounds(170, 30, 225, 30);
-        userStep.setBounds(395, 30, 80, 30);
-        computerLabel.setBounds(36, 90, 108, 30);
-        computerWordLabel.setBounds(170, 90, 284, 30);
-        attention.setBounds(36, 140, 108, 30);
-        scrollPane.setBounds(36, 170, 440, 60);
+        gameFrame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+        userLabel.setBounds(USER_LABEL_X, USER_LABEL_Y, USER_LABEL_WIDTH, USER_LABEL_HEIGHT);
+        userWordField.setBounds(USER_WORD_FIELD_X, USER_WORD_FIELD_Y, USER_WORD_FIELD_WIDTH, USER_WORD_FIELD_HEIGHT);
+        userStep.setBounds(USER_STEP_X, USER_STEP_Y, USER_STEP_WIDTH, USER_STEP_HEIGHT);
+        computerLabel.setBounds(COMPUTER_LABEL_X, COMPUTER_LABEL_Y, COMPUTER_LABEL_WIDTH, COMPUTER_LABEL_HEIGHT);
+        computerWordLabel.setBounds(COMPUTER_WORD_LABEL_X, COMPUTER_WORD_LABEL_Y, COMPUTER_WORD_LABEL_WIDTH, COMPUTER_WORD_LABEL_HEIGHT);
+        attention.setBounds(ATTENTION_X, ATTENTION_Y, ATTENTION_WIDTH, ATTENTION_HEIGHT);
+        scrollPane.setBounds(SCROLL_PANE_X, SCROLL_PANE_Y, SCROLL_PANE_WIDTH, SCROLL_PANE_HEIGHT);
 
         gameFrame.add(userLabel);
         gameFrame.add(userWordField);
@@ -86,8 +122,8 @@ public class GameWindow implements ActionListener {
         int screenHeight = screenSize.height;
 
         // Розрахунок координат для вікна, щоб відкрити його посередині екрану
-        int x = (screenWidth - windowWidth) / 2;
-        int y = (screenHeight - windowHeight) / 2;
+        int x = (screenWidth - WINDOW_WIDTH) / 2;
+        int y = (screenHeight - WINDOW_HEIGHT) / 2;
         gameFrame.setLocation(x, y);
 
         userWordField.addActionListener(this);

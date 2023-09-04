@@ -10,6 +10,26 @@ import java.util.HashSet;
 import java.util.Scanner;
 
 public class GreatingWindow {
+    private static final int WINDOW_WIDTH = 516;
+    private static final int WINDOW_HEIGHT = 200;
+
+    private static final int LABEL1_X = 40;
+    private static final int LABEL1_Y = 40;
+    private static final int LABEL2_X = 40;
+    private static final int LABEL2_Y = 82;
+    private static final int LABEL_WIDTH = 300;
+    private static final int LABEL_HEIGHT = 30;
+
+    private static final int STUDY_BUTTON_X = 320;
+    private static final int STUDY_BUTTON_Y = 30;
+    private static final int STUDY_BUTTON_WIDTH = 140;
+    private static final int STUDY_BUTTON_HEIGHT = 36;
+
+    private static final int PLAY_BUTTON_X = 320;
+    private static final int PLAY_BUTTON_Y = 92;
+    private static final int PLAY_BUTTON_WIDTH = 140;
+    private static final int PLAY_BUTTON_HEIGHT = 36;
+
     JFrame greatingFrame;
     static HashSet<String> cities = new HashSet<>();
 
@@ -23,13 +43,11 @@ public class GreatingWindow {
 
         //Створюємо фрейм і задаємо розміри і положення компонентів.
         greatingFrame = new JFrame("Вітаємо!");
-        int windowWidth = 516;
-        int windowHeight = 200;
-        greatingFrame.setSize(windowWidth, windowHeight);
-        greatingLabel1.setBounds(40, 40, 300, 30);
-        greatingLabel2.setBounds(40, 82, 300, 30);
-        studyButton.setBounds(320,30,140,36);
-        playButton.setBounds(320,92,140,36);
+        greatingFrame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+        greatingLabel1.setBounds(LABEL1_X, LABEL1_Y, LABEL_WIDTH, LABEL_HEIGHT);
+        greatingLabel2.setBounds(LABEL2_X, LABEL2_Y, LABEL_WIDTH, LABEL_HEIGHT);
+        studyButton.setBounds(STUDY_BUTTON_X, STUDY_BUTTON_Y, STUDY_BUTTON_WIDTH, STUDY_BUTTON_HEIGHT);
+        playButton.setBounds(PLAY_BUTTON_X, PLAY_BUTTON_Y, PLAY_BUTTON_WIDTH, PLAY_BUTTON_HEIGHT);
 
         greatingFrame.add(greatingLabel1);
         greatingFrame.add(greatingLabel2);
@@ -65,8 +83,8 @@ public class GreatingWindow {
         int screenHeight = screenSize.height;
 
         // Розрахунок координат для вікна, щоб відкрити його посередині екрану
-        int x = (screenWidth - windowWidth) / 2;
-        int y = (screenHeight - windowHeight) / 2;
+        int x = (screenWidth - WINDOW_WIDTH) / 2;
+        int y = (screenHeight - WINDOW_HEIGHT) / 2;
         greatingFrame.setLocation(x, y);
 
         studyButton.addActionListener(e -> {
@@ -76,7 +94,7 @@ public class GreatingWindow {
                 throw new RuntimeException(ex);
             }
             greatingFrame.dispose(); // Закриття вітального вікна
-            StudyWindow studyWindow = new StudyWindow(); // Відкриття ігрового вікна
+            new StudyWindow(); // Відкриття ігрового вікна
         });
 
         playButton.addActionListener(e -> {
@@ -86,7 +104,7 @@ public class GreatingWindow {
                 throw new RuntimeException(ex);
             }
             greatingFrame.dispose(); // Закриття вітального вікна
-            GameWindow gameWindow = new GameWindow(); // Відкриття ігрового вікна
+            new GameWindow(); // Відкриття ігрового вікна
         });
     }
 

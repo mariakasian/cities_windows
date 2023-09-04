@@ -7,6 +7,28 @@ import java.util.HashSet;
 import static citiesgame.GreatingWindow.cities;
 
 public class StudyWindow {
+    private static final int WINDOW_WIDTH = 516;
+    private static final int WINDOW_HEIGHT = 400;
+
+    private static final int ASK_FOR_LETTER_X = 40;
+    private static final int ASK_FOR_LETTER_Y = 30;
+    private static final int ASK_FOR_LETTER_WIDTH = 280;
+    private static final int ASK_FOR_LETTER_HEIGHT = 30;
+
+    private static final int CHOOSE_LETTER_X = 366;
+    private static final int CHOOSE_LETTER_Y = 30;
+    private static final int CHOOSE_LETTER_WIDTH = 100;
+    private static final int CHOOSE_LETTER_HEIGHT = 30;
+
+    private static final int BACK_BUTTON_X = 366;
+    private static final int BACK_BUTTON_Y = 290;
+    private static final int BACK_BUTTON_WIDTH = 100;
+    private static final int BACK_BUTTON_HEIGHT = 40;
+
+    private static final int SCROLL_PANE_X = 40;
+    private static final int SCROLL_PANE_Y = 80;
+    private static final int SCROLL_PANE_WIDTH = 280;
+    private static final int SCROLL_PANE_HEIGHT = 250;
 
     String[] letters = {"А", "Б", "В", "Г", "Д", "Е", "Є", "Ж", "З", "І", "К", "Л", "М", "Н", "О", "П",
             "Р", "С", "Т", "У", "Ф", "Х", "Ч", "Ш", "Щ", "Ю", "Я"};
@@ -22,14 +44,12 @@ public class StudyWindow {
 
         //Создаём фрейм и задаём размеры и раположение компонентов
         JFrame studyFrame = new JFrame("Вивчаймо міста України!");
-        int windowWidth = 516;
-        int windowHeight = 400;
-        studyFrame.setSize(windowWidth, windowHeight);
+        studyFrame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 
-        askForLetter.setBounds(40,30,280,30);
-        chooseLetter.setBounds(366,30,100,30);
-        backButton.setBounds(366,290,100,40);
-        scrollPane.setBounds(40,80,280,250);
+        askForLetter.setBounds(ASK_FOR_LETTER_X,ASK_FOR_LETTER_Y,ASK_FOR_LETTER_WIDTH,ASK_FOR_LETTER_HEIGHT);
+        chooseLetter.setBounds(CHOOSE_LETTER_X,CHOOSE_LETTER_Y,CHOOSE_LETTER_WIDTH,CHOOSE_LETTER_HEIGHT);
+        backButton.setBounds(BACK_BUTTON_X,BACK_BUTTON_Y,BACK_BUTTON_WIDTH,BACK_BUTTON_HEIGHT);
+        scrollPane.setBounds(SCROLL_PANE_X,SCROLL_PANE_Y,SCROLL_PANE_WIDTH,SCROLL_PANE_HEIGHT);
 
         studyFrame.add(askForLetter);
         studyFrame.add(chooseLetter);
@@ -67,8 +87,8 @@ public class StudyWindow {
         int screenHeight = screenSize.height;
 
         // Розрахунок координат для вікна, щоб відкрити його посередині екрану
-        int x = (screenWidth - windowWidth) / 2;
-        int y = (screenHeight - windowHeight) / 2;
+        int x = (screenWidth - WINDOW_WIDTH) / 2;
+        int y = (screenHeight - WINDOW_HEIGHT) / 2;
         studyFrame.setLocation(x, y);
 
         chooseLetter.addActionListener(e -> {
@@ -78,7 +98,7 @@ public class StudyWindow {
 
         backButton.addActionListener(e -> {
             studyFrame.dispose(); //Закриваємо StudyWindow.
-            GreatingWindow greatingWindow = new GreatingWindow(); //Відкриваємо вітальне вікно.
+            new GreatingWindow(); //Відкриваємо вітальне вікно.
         });
     }
 

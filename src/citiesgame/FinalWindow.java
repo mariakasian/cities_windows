@@ -4,6 +4,44 @@ import javax.swing.*;
 import java.awt.*;
 
 public class FinalWindow {
+    private static final int WINDOW_WIDTH = 516;
+    private static final int WINDOW_HEIGHT = 260;
+
+    private static final int WHO_LOSE_LABEL_X = 36;
+    private static final int WHO_LOSE_LABEL_Y = 22;
+    private static final int WHO_LOSE_LABEL_WIDTH = 440;
+    private static final int WHO_LOSE_LABEL_HEIGHT = 30;
+
+    private static final int THANKS_LABEL_X = 36;
+    private static final int THANKS_LABEL_Y = 56;
+    private static final int THANKS_LABEL_WIDTH = 440;
+    private static final int THANKS_LABEL_HEIGHT = 30;
+
+    private static final int WINNER_LABEL_X = 36;
+    private static final int WINNER_LABEL_Y = 80;
+    private static final int WINNER_LABEL_WIDTH = 440;
+    private static final int WINNER_LABEL_HEIGHT = 30;
+
+    private static final int SCORE_LABEL_X = 36;
+    private static final int SCORE_LABEL_Y = 120;
+    private static final int SCORE_LABEL_WIDTH = 200;
+    private static final int SCORE_LABEL_HEIGHT = 30;
+
+    private static final int USER_SCORE_LABEL_X = 36;
+    private static final int USER_SCORE_LABEL_Y = 146;
+    private static final int USER_SCORE_LABEL_WIDTH = 200;
+    private static final int USER_SCORE_LABEL_HEIGHT = 30;
+
+    private static final int COMPUTER_SCORE_LABEL_X = 36;
+    private static final int COMPUTER_SCORE_LABEL_Y = 170;
+    private static final int COMPUTER_SCORE_LABEL_WIDTH = 200;
+    private static final int COMPUTER_SCORE_LABEL_HEIGHT = 30;
+
+    private static final int END_BUTTON_X = 330;
+    private static final int END_BUTTON_Y = 142;
+    private static final int END_BUTTON_WIDTH = 140;
+    private static final int END_BUTTON_HEIGHT = 48;
+
     JFrame finalFrame;
     JLabel whoLoseLabel;
     JLabel thanksLabel;
@@ -26,16 +64,14 @@ public class FinalWindow {
 
         //Створюємо фрейм и задаємо розміри і положенння компонентів.
         finalFrame = new JFrame("Вітаємо!");
-        int windowWidth = 516;
-        int windowHeight = 260;
-        finalFrame.setSize(windowWidth, windowHeight);
-        whoLoseLabel.setBounds(36, 22, 440, 30);
-        thanksLabel.setBounds(36, 56, 440, 30);
-        winnerLabel.setBounds(36, 80, 440, 30);
-        scoreLabel.setBounds(36, 120, 200, 30);
-        userScoreLabel.setBounds(36, 146, 200, 30);
-        computerScoreLabel.setBounds(36, 170, 200, 30);
-        endButton.setBounds(330,142,140,48);
+        finalFrame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+        whoLoseLabel.setBounds(WHO_LOSE_LABEL_X, WHO_LOSE_LABEL_Y, WHO_LOSE_LABEL_WIDTH, WHO_LOSE_LABEL_HEIGHT);
+        thanksLabel.setBounds(THANKS_LABEL_X, THANKS_LABEL_Y, THANKS_LABEL_WIDTH, THANKS_LABEL_HEIGHT);
+        winnerLabel.setBounds(WINNER_LABEL_X, WINNER_LABEL_Y, WINNER_LABEL_WIDTH, WINNER_LABEL_HEIGHT);
+        scoreLabel.setBounds(SCORE_LABEL_X, SCORE_LABEL_Y, SCORE_LABEL_WIDTH, SCORE_LABEL_HEIGHT);
+        userScoreLabel.setBounds(USER_SCORE_LABEL_X, USER_SCORE_LABEL_Y, USER_SCORE_LABEL_WIDTH, USER_SCORE_LABEL_HEIGHT);
+        computerScoreLabel.setBounds(COMPUTER_SCORE_LABEL_X, COMPUTER_SCORE_LABEL_Y, COMPUTER_SCORE_LABEL_WIDTH, COMPUTER_SCORE_LABEL_HEIGHT);
+        endButton.setBounds(END_BUTTON_X, END_BUTTON_Y, END_BUTTON_WIDTH, END_BUTTON_HEIGHT);
 
         finalFrame.add(whoLoseLabel);
         finalFrame.add(thanksLabel);
@@ -79,8 +115,8 @@ public class FinalWindow {
         int screenHeight = screenSize.height;
 
         // Розрахунок координат для вікна, щоб відкрити його посередині екрану
-        int x = (screenWidth - windowWidth) / 2;
-        int y = (screenHeight - windowHeight) / 2;
+        int x = (screenWidth - WINDOW_WIDTH) / 2;
+        int y = (screenHeight - WINDOW_HEIGHT) / 2;
         finalFrame.setLocation(x, y);
 
         endButton.addActionListener(e -> {
